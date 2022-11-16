@@ -2,7 +2,10 @@ import React from 'react'
 import './Search.css'
 const Search = () => {
     return (
-        <div>Search</div>
+        <div className='search'>
+            <input className='searchInput' placeholder='Search Products...' />
+
+        </div>
     )
 }
 

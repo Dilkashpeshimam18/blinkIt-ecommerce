@@ -3,7 +3,8 @@ import './StoreRight.css'
 
 const StoreRight = () => {
     return (
-        <div>StoreRight</div>
+        <div className='storeRight'>
+            StoreRight</div>
     )
 }
 

@@ -1,0 +1,31 @@
+.sales {
+  margin-top: 40px;
+}
+.sales__img {
+  width: 80px;
+  height: 80px;
+}
+.sales__container {
+  display: flex;
+  padding: 4px 0;
+  margin-left: 0 !important;
+  margin-bottom: 1.2rem;
+  zoom: 1;
+}
+.sales__body {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+.sales__title {
+  font-weight: bold;
+}
+.sales__desc {
+  color: #676767;
+  font-size: 14px;
+  font-family: Source Sans Pro;
+}
+.sales__price {
+  color: #676767;
+  padding-top: 15px;
+}
