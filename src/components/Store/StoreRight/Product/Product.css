@@ -1,0 +1,16 @@
+.product {
+  padding: 10px;
+  margin-right: 12px;
+  margin-bottom: 10px;
+}
+.product__container {
+  display: flex;
+  justify-content: space-between;
+}
+.product__img {
+  border-radius: 3px;
+}
+.product__body {
+  display: flex;
+  flex-direction: column;
+}
