@@ -7,7 +7,7 @@ const SlidingCart = ({ isPane, setIsPane }) => {
     return (
         <SlidingPane
             className="some-custom-class"
-            overlayClassName="some-custom-overlay-class overlay"
+            // overlayClassName="some-custom-overlay-class overlay"
             isOpen={isPane}
             title="PIZZA INN."
             hideHeader={true}

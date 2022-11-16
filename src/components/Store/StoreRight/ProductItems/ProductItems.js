@@ -13,7 +13,7 @@ const ProductItems = () => {
         <div className='productItems'>
             {data.map((item, index) => {
                 return (
-                    <Product key={index} title={item.title} price={item.price} img={item.imageUrl} />
+                    <Product key={index} id={item.id} title={item.title} price={item.price} img={item.imageUrl} quantity={item.quantity} />
                 )
             })}
         </div>
