@@ -40,6 +40,7 @@
 .cart__body__total {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 5px;
   margin-left: 70px;
 }
@@ -91,4 +92,9 @@
   border-radius: 10px;
   cursor: pointer;
   margin-right: 10px;
+}
+.cart__body__remove {
+  padding-left: 25px;
+  padding-top: 18px;
+  cursor: pointer;
 }

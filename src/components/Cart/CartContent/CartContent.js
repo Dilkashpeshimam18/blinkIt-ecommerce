@@ -1,7 +1,7 @@
 import React from 'react'
 import './CartContent.css'
 import Divider from '@mui/material/Divider';
-
+import CloseIcon from '../../assets/close.png'
 
 const CartContent = ({ title, price, img }) => {
     return (
@@ -34,7 +34,9 @@ const CartContent = ({ title, price, img }) => {
 
                     <div className='cart__body__total'>
                         <span className='cart__body__totalPrice'>$:{price}</span>
-                        <span className='cart__body__totalRemove'>Remove</span>
+                    </div>
+                    <div className='cart__body__remove'>
+                        <img style={{ height: "10px", width: '10px' }} src={CloseIcon} />
                     </div>
 
                 </div>

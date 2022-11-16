@@ -17,7 +17,7 @@ const Cart = ({ setIsPane }) => {
             <div className='cart__header'>
 
                 <h3 className='cart__title'>Your Cart</h3>
-                <p className='cart__remove'>Remove all</p>
+                <p className='cart__remove'>Clear all</p>
 
 
             </div>
