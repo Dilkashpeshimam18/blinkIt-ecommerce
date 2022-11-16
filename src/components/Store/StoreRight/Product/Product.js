@@ -9,7 +9,6 @@ const Product = ({ title, price, img }) => {
                 <div className='product__body'>
 
                     <span style={{ marginTop: '10px' }} className='sales__title'>{title}</span>
-                    <span className='sales__desc'>Boombox Cartel</span>
                     <span style={{ paddingTop: "5px" }} className='sales__price'>${price}</span>
                 </div>
                 <ShoppingCartOutlinedIcon style={{ color: '#333', cursor: 'pointer', marginTop: '10px', fontSize: '30px' }} />

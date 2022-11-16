@@ -5,7 +5,7 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 
-const Header = () => {
+const Header = ({ setIsPane }) => {
     return (
         <div className='header'>
             <div className='header__Container'>
@@ -31,7 +31,7 @@ const Header = () => {
                                 <SearchOutlinedIcon />
 
                             </div>
-                            <div style={{ marginRight: '18px' }} className='header__singleIcon'>
+                            <div onClick={() => setIsPane(true)} style={{ marginRight: '18px' }} className='header__singleIcon'>
 
                                 <span style={{ marginTop: '5px' }}>    <LocalMallOutlinedIcon /> </span>
                                 <span style={{ fontSize: '18px', marginLeft: '10px' }}>0</span>

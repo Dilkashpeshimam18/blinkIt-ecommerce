@@ -3,10 +3,10 @@ import Header from '../Header/Header'
 import './Store.css'
 import StoreLeft from './StoreLeft/StoreLeft'
 import StoreRight from './StoreRight/StoreRight'
-const Store = () => {
+const Store = ({ setIsPane }) => {
     return (
         <div className='store'>
-            <Header />
+            <Header setIsPane={setIsPane} />
             <div className='store__Container'>
                 <StoreLeft />
                 <StoreRight />
