@@ -45,6 +45,7 @@ const CartProvider = (props) => {
     let cartValue = {
         products: products,
         numberOfProduct: numberOfProduct,
+        setNumberOfProduct: setNumberOfProduct,
         addProduct: addProduct,
         removeProduct: removeProduct,
         removeAll: removeAll
