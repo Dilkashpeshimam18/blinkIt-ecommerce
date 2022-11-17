@@ -1,0 +1,17 @@
+.about__container {
+  display: flex;
+  justify-content: center;
+}
+.about__contentContainer {
+  max-width: 600px;
+}
+.about__imgContainer {
+  padding-top: 100px;
+  padding-right: 100px;
+}
+.about__contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}

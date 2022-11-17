@@ -5,6 +5,7 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import CartContext from '../../store/cartContext';
+import { NavLink } from 'react-router-dom'
 
 const Header = ({ setIsPane }) => {
     const { products, numberOfProduct, setNumberOfProduct, addProduct } = useContext(CartContext)
@@ -21,20 +22,20 @@ const Header = ({ setIsPane }) => {
             <div className='header__Container'>
                 <div className='header__Left'>
                     <div className='header__Icon'>
-                        <h4>BLACKPINK</h4>
+                        <h4>BLINK FOREVER</h4>
                     </div>
 
                 </div>
                 <div className='hedaer__Right'>
                     <div style={{ display: 'flex', alignItems: 'center' }} className='header__Links'>
                         <div className='header__singleLink'>
-                            <p>HOME</p>
+                            <NavLink style={{ textDecoration: 'none' }} to='/'><p>HOME</p></NavLink>
                         </div>
                         <div className='header__singleLink'>
-                            <p>STORE</p>
+                            <NavLink style={{ textDecoration: 'none' }} to='/store'><p>STORE</p></NavLink>
                         </div>
                         <div className='header__singleLink'>
-                            <p style={{ fontFamily: "Montserrat" }}>ABOUT</p>
+                            <NavLink style={{ textDecoration: 'none' }} to='/about'><p style={{ fontFamily: "Montserrat" }}>ABOUT</p></NavLink>
                         </div>
                         <div className='header__icons'>
                             <div className='header__singleIcon'>
