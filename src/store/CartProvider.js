@@ -2,13 +2,18 @@ import React, { useState, useEffect, useMemo } from 'react'
 import CartContext from './cartContext'
 
 const CartProvider = (props) => {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState(() => {
+        return JSON.parse(localStorage.getItem('allProduct')) || []
+    })
     const [numberOfProduct, setNumberOfProduct] = useState(0)
 
     let total = products.reduce((currAmount, item) => {
         return currAmount + item.price * item.quantity
     }, 0)
 
+    useEffect(() => {
+        localStorage.setItem('allProduct', JSON.stringify(products))
+    }, [products])
     const addProduct = (product) => {
         let existingItemIndex = products.findIndex(ele => ele.id === product.id)
         let existingItem = products[existingItemIndex]
