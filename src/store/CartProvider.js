@@ -43,6 +43,7 @@ const CartProvider = (props) => {
 
     }
     const removeAll = () => {
+        setProducts([])
 
     }
 
