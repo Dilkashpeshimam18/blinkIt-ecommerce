@@ -5,7 +5,7 @@ import CloseIcon from '../../assets/close.png'
 import CartContext from '../../../store/cartContext';
 
 const CartContent = ({ id, title, price, img, quantity }) => {
-    const { removeProduct } = useContext(CartContext)
+    const { removeProduct, incrementQuantity, decrementQuantity } = useContext(CartContext)
     return (
         <div className='cart'>
             <div className='cart__body'>
@@ -21,14 +21,14 @@ const CartContent = ({ id, title, price, img, quantity }) => {
                         <span className='cart__body__quantityTitle' >Quantity</span>
                         {/* <span className='cart__body__quantityTotal'>{quantity}</span> */}
                         <div className='cart__body__quantity'>
-                            <div className='quantity__subtract'>
+                            <div onClick={() => decrementQuantity(id)} className='quantity__subtract'>
                                 <span style={{ marginLeft: '12px' }}>-</span>
                             </div>
                             <div className='quantity'>
                                 {quantity}
                             </div>
 
-                            <div className='quantity__add'>
+                            <div onClick={() => incrementQuantity(id)} className='quantity__add'>
                                 <span style={{ marginLeft: '9px' }}> +</span>
                             </div>
                         </div>
