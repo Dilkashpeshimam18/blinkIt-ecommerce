@@ -35,7 +35,11 @@ const CartProvider = (props) => {
 
     }
 
-    const removeProduct = (product) => {
+    const removeProduct = (id) => {
+        const removeProduct = products.filter((data) => {
+            return data.id != id
+        })
+        setProducts(removeProduct)
 
     }
     const removeAll = () => {

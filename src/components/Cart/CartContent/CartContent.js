@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './CartContent.css'
 import Divider from '@mui/material/Divider';
 import CloseIcon from '../../assets/close.png'
+import CartContext from '../../../store/cartContext';
 
-const CartContent = ({ title, price, img, quantity }) => {
+const CartContent = ({ id, title, price, img, quantity }) => {
+    const { removeProduct } = useContext(CartContext)
     return (
         <div className='cart'>
             <div className='cart__body'>
@@ -35,7 +37,7 @@ const CartContent = ({ title, price, img, quantity }) => {
                     <div className='cart__body__total'>
                         <span className='cart__body__totalPrice'>$:{price}</span>
                     </div>
-                    <div className='cart__body__remove'>
+                    <div onClick={() => removeProduct(id)} className='cart__body__remove'>
                         <img style={{ height: "10px", width: '10px' }} src={CloseIcon} />
                     </div>
 
