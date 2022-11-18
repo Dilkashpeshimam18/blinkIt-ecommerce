@@ -35,7 +35,10 @@ const Header = ({ setIsPane }) => {
                             <NavLink style={{ textDecoration: 'none' }} to='/store'><p>STORE</p></NavLink>
                         </div>
                         <div className='header__singleLink'>
-                            <NavLink style={{ textDecoration: 'none' }} to='/about'><p style={{ fontFamily: "Montserrat" }}>ABOUT</p></NavLink>
+                            <NavLink style={{ textDecoration: 'none' }} to='/about'><p style={{ fontFamily: "Montserrat" }}>ABOUT US</p></NavLink>
+                        </div>
+                        <div className='header__singleLink'>
+                            <NavLink style={{ textDecoration: 'none' }} to='/contact'><p style={{ fontFamily: "Montserrat" }}>CONTACT US</p></NavLink>
                         </div>
                         <div className='header__icons'>
                             <div className='header__singleIcon'>
