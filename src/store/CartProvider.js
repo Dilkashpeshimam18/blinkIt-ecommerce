@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import CartContext from './cartContext'
 
 const CartProvider = (props) => {
     const [products, setProducts] = useState([])
     const [numberOfProduct, setNumberOfProduct] = useState(0)
+
+    let total = products.reduce((currAmount, item) => {
+        return currAmount + item.price * item.quantity
+    }, 0)
 
     const addProduct = (product) => {
         let existingItemIndex = products.findIndex(ele => ele.id === product.id)
@@ -116,7 +120,8 @@ const CartProvider = (props) => {
         removeProduct: removeProduct,
         removeAll: removeAll,
         incrementQuantity: incrementQuantity,
-        decrementQuantity: decrementQuantity
+        decrementQuantity: decrementQuantity,
+        total: total
     }
     return (
         <CartContext.Provider value={cartValue}>

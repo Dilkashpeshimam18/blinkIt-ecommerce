@@ -6,7 +6,7 @@ import CartContext from '../../../store/cartContext'
 
 const Cart = ({ setIsPane }) => {
     const [cartData, setCartData] = useState([])
-    const { products, removeAll } = useContext(CartContext)
+    const { products, removeAll, total } = useContext(CartContext)
 
     useEffect(() => {
         let data = Data
@@ -37,7 +37,7 @@ const Cart = ({ setIsPane }) => {
 
             <div className='cart__total'>
                 <h3 className='cart__total__title'>Total</h3>
-                <h2>$ 0</h2>
+                <h2>$ {total}</h2>
             </div>
             <div className='cart__buttons'>
 
