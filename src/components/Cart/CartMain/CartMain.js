@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import './CartMain.css'
 import { Data } from '../../Data/Data'
 import CartContent from '../CartContent/CartContent'
+import CartContext from '../../../store/cartContext'
+
 const Cart = ({ setIsPane }) => {
     const [cartData, setCartData] = useState([])
+    const { products } = useContext(CartContext)
+
     useEffect(() => {
         let data = Data
         setCartData(data)
     }, [])
+
     const closeCart = () => {
         setIsPane(false)
 
@@ -22,9 +27,9 @@ const Cart = ({ setIsPane }) => {
 
             </div>
             <div className='cart__main'>
-                {cartData.map((data, index) => {
+                {products.map((data, index) => {
                     return (
-                        <CartContent key={index} title={data.title} price={data.price} img={data.imageUrl} />
+                        <CartContent key={index} title={data.title} price={data.price} img={data.img} quantity={data.quantity} />
                     )
                 })}
 

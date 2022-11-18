@@ -3,7 +3,7 @@ import './CartContent.css'
 import Divider from '@mui/material/Divider';
 import CloseIcon from '../../assets/close.png'
 
-const CartContent = ({ title, price, img }) => {
+const CartContent = ({ title, price, img, quantity }) => {
     return (
         <div className='cart'>
             <div className='cart__body'>
@@ -23,7 +23,7 @@ const CartContent = ({ title, price, img }) => {
                                 <span style={{ marginLeft: '12px' }}>-</span>
                             </div>
                             <div className='quantity'>
-                                1
+                                {quantity}
                             </div>
 
                             <div className='quantity__add'>
