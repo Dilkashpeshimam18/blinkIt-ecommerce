@@ -9,8 +9,8 @@ const CartProvider = (props) => {
     const [token, setToken] = useState(() => {
         return localStorage.getItem('tokenId') || null
     })
+    const isLoggedIn = !!token
 
-    let userLoggedIn = !!token
     let total = products.reduce((currAmount, item) => {
         return currAmount + item.price * item.quantity
     }, 0)
@@ -124,6 +124,7 @@ const CartProvider = (props) => {
     const login = (token) => {
         localStorage.setItem('tokenId', token)
         setToken(token)
+        console.log(isLoggedIn)
     }
 
 
@@ -138,7 +139,7 @@ const CartProvider = (props) => {
         decrementQuantity: decrementQuantity,
         total: total,
         token: token,
-        isLoggedIn: userLoggedIn,
+        isLoggedIn: isLoggedIn,
         login: login
     }
     return (

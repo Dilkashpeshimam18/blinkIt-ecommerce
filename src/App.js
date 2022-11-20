@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './App.css';
 import SlidingCart from './components/Cart/SlidingCart';
 import Header from './components/Header/Header';
 import Store from './components/Store/Store';
 import CartProvider from './store/CartProvider';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
+import CartContext from './store/cartContext';
 
 function App() {
   const [isPane, setIsPane] = useState(false)
-
+  const { isLoggedIn } = useContext(CartContext)
+  console.log(isLoggedIn)
   return (
     <CartProvider>
       <div className="app">
@@ -21,7 +23,8 @@ function App() {
         <SlidingCart isPane={isPane} setIsPane={setIsPane} />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/store' element={<Store setIsPane={setIsPane} />} />
+          <Route path='/store' element={isLoggedIn && <Store setIsPane={setIsPane} />} />
+
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
