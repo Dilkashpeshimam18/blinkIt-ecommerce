@@ -6,7 +6,11 @@ const CartProvider = (props) => {
         return JSON.parse(localStorage.getItem('allProduct')) || []
     })
     const [numberOfProduct, setNumberOfProduct] = useState(0)
+    const [token, setToken] = useState(() => {
+        return localStorage.getItem('tokenId') || null
+    })
 
+    let userLoggedIn = !!token
     let total = products.reduce((currAmount, item) => {
         return currAmount + item.price * item.quantity
     }, 0)
@@ -117,6 +121,12 @@ const CartProvider = (props) => {
 
     }
 
+    const login = (token) => {
+        localStorage.setItem('tokenId', token)
+        setToken(token)
+    }
+
+
     let cartValue = {
         products: products,
         numberOfProduct: numberOfProduct,
@@ -126,7 +136,10 @@ const CartProvider = (props) => {
         removeAll: removeAll,
         incrementQuantity: incrementQuantity,
         decrementQuantity: decrementQuantity,
-        total: total
+        total: total,
+        token: token,
+        isLoggedIn: userLoggedIn,
+        login: login
     }
     return (
         <CartContext.Provider value={cartValue}>

@@ -8,6 +8,8 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
+import Login from './components/Login/Login';
+import SignUp from './components/SignUp/SignUp';
 
 function App() {
   const [isPane, setIsPane] = useState(false)
@@ -22,6 +24,8 @@ function App() {
           <Route path='/store' element={<Store setIsPane={setIsPane} />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/sign-up' element={<SignUp />} />
         </Routes>
       </div>
     </CartProvider>

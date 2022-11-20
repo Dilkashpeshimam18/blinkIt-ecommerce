@@ -10,6 +10,9 @@ const CartContext = createContext({
     removeAll: () => { },
     incrementQuantity: (id) => { },
     decrementQuantity: (id) => { },
+    token: '',
+    isLoggedIn: false,
+    login: (token) => { }
 
 })
 
