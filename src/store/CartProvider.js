@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import CartContext from './cartContext'
-
+import axios from 'axios'
 const CartProvider = (props) => {
     const [products, setProducts] = useState(() => {
         return JSON.parse(localStorage.getItem('allProduct')) || []
@@ -9,6 +9,8 @@ const CartProvider = (props) => {
     const [token, setToken] = useState(() => {
         return localStorage.getItem('tokenId') || null
     })
+    const [email, setEmail] = useState('')
+    const [userCart, setUserCart] = useState([])
     const isLoggedIn = !!token
 
     let total = products.reduce((currAmount, item) => {
@@ -18,7 +20,8 @@ const CartProvider = (props) => {
     useEffect(() => {
         localStorage.setItem('allProduct', JSON.stringify(products))
     }, [products])
-    const addProduct = (product) => {
+
+    const addProduct = async (product) => {
         let existingItemIndex = products.findIndex(ele => ele.id === product.id)
         let existingItem = products[existingItemIndex]
         let updatedItem;
@@ -42,6 +45,16 @@ const CartProvider = (props) => {
                 updatedItems.push(product)
                 return updatedItems
             })
+            try {
+                let newProduct = { ...product, email: email }
+                const response = await axios.post(`https://crudcrud.com/api/bf030c4f91524fc890c22b63b3e832a7/cartData`, newProduct)
+                console.log(response.data)
+
+
+            } catch (err) {
+                console.log(err)
+
+            }
         }
 
         console.log(products)
@@ -121,10 +134,22 @@ const CartProvider = (props) => {
 
     }
 
-    const login = (token) => {
+    const login = (token, email) => {
         localStorage.setItem('tokenId', token)
         setToken(token)
-        console.log(isLoggedIn)
+        setEmail(email)
+    }
+    const getUserCart = async () => {
+        try {
+            const result = await axios.get('https://crudcrud.com/api/bf030c4f91524fc890c22b63b3e832a7/cartData')
+            let data = result.data
+            let userdata = data.filter((item) => {
+                return item.email && item.email == email
+            })
+            console.log(userdata)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
 
@@ -140,7 +165,9 @@ const CartProvider = (props) => {
         total: total,
         token: token,
         isLoggedIn: isLoggedIn,
-        login: login
+        login: login,
+        email: email,
+        getUserCart: getUserCart
     }
     return (
         <CartContext.Provider value={cartValue}>

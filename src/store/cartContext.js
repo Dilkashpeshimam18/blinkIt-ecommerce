@@ -12,7 +12,10 @@ const CartContext = createContext({
     decrementQuantity: (id) => { },
     token: '',
     isLoggedIn: false,
-    login: (token) => { }
+    login: (token) => { },
+    email: '',
+    getUserCart: () => { }
+
 
 })
 

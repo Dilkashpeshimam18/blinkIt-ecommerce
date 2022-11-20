@@ -24,7 +24,8 @@ const Login = () => {
 
                 }
             })
-            login(response.data.idToken)
+            login(response.data.idToken, response.data.email)
+            console.log(response.data)
             navigate('/store')
         } catch (err) {
             console.log(err)

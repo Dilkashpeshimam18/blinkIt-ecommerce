@@ -3,14 +3,14 @@ import './CartMain.css'
 import { Data } from '../../Data/Data'
 import CartContent from '../CartContent/CartContent'
 import CartContext from '../../../store/cartContext'
-
+import axios from 'axios'
 const Cart = ({ setIsPane }) => {
     const [cartData, setCartData] = useState([])
-    const { products, removeAll, total } = useContext(CartContext)
+    const { products, removeAll, total, email, getUserCart } = useContext(CartContext)
+
 
     useEffect(() => {
-        let data = Data
-        setCartData(data)
+        getUserCart()
     }, [])
 
     const closeCart = () => {
