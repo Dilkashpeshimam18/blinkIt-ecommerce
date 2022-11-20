@@ -1,0 +1,18 @@
+.home {
+  display: flex;
+  flex-direction: column;
+}
+.home__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e6e6e6;
+}
+.home__btn {
+  opacity: 1;
+  width: 100px;
+  height: 40px;
+  background-color: #3bc4d4;
+  color: white;
+  border: none;
+}
