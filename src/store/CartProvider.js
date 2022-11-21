@@ -3,7 +3,12 @@ import CartContext from './cartContext'
 import axios from 'axios'
 const CartProvider = (props) => {
     const [products, setProducts] = useState(() => {
-        return JSON.parse(localStorage.getItem('allProduct')) || []
+        if (localStorage.getItem('tokenId')) {
+            return JSON.parse(localStorage.getItem('allProduct'))
+
+        } else {
+            return []
+        }
     })
     const [numberOfProduct, setNumberOfProduct] = useState(0)
     const [token, setToken] = useState(() => {
@@ -11,7 +16,14 @@ const CartProvider = (props) => {
     })
     const [email, setEmail] = useState('')
     const [userCart, setUserCart] = useState([])
-    const isLoggedIn = !!token
+
+    const [isLoggedIn, setIsLoggedIn] = useState(() => {
+        if (localStorage.getItem('tokenId')) {
+            return true
+        } else {
+            return false
+        }
+    })
 
     let total = products.reduce((currAmount, item) => {
         return currAmount + item.price * item.quantity
@@ -138,6 +150,7 @@ const CartProvider = (props) => {
         localStorage.setItem('tokenId', token)
         setToken(token)
         setEmail(email)
+        setIsLoggedIn(true)
     }
     const getUserCart = async () => {
         try {

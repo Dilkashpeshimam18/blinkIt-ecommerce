@@ -1,10 +1,19 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import CartContext from '../../store/cartContext'
 import SubSection from '../SubSection/SubSection'
 import './Store.css'
 import StoreLeft from './StoreLeft/StoreLeft'
 import StoreRight from './StoreRight/StoreRight'
+import { useNavigate } from 'react-router-dom'
 const Store = ({ setIsPane }) => {
     const [section, setSection] = useState('Store')
+    const { isLoggedIn } = useContext(CartContext)
+    const navigate = useNavigate()
+    useEffect(() => {
+        if (isLoggedIn == false) {
+            navigate('/login')
+        }
+    }, [])
     return (
         <div className='store'>
             <SubSection section={section} />

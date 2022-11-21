@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import './Login.css'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
@@ -7,8 +7,14 @@ import CartContext from '../../store/cartContext'
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const { login } = useContext(CartContext)
+    const { login, isLoggedIn } = useContext(CartContext)
     const navigate = useNavigate()
+
+    useEffect(() => {
+        if (isLoggedIn == true) {
+            navigate('/store')
+        }
+    }, [])
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
@@ -27,6 +33,7 @@ const Login = () => {
             login(response.data.idToken, response.data.email)
             console.log(response.data)
             navigate('/store')
+            console.log(isLoggedIn)
         } catch (err) {
             console.log(err)
             alert(err)
