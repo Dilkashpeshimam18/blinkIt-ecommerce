@@ -31,7 +31,6 @@ const Login = () => {
                 }
             })
             login(response.data.idToken, response.data.email)
-            console.log(response.data)
             navigate('/store')
             console.log(isLoggedIn)
         } catch (err) {

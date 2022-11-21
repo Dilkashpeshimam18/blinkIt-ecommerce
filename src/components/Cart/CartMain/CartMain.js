@@ -27,7 +27,7 @@ const Cart = ({ setIsPane }) => {
 
             </div>
             <div className='cart__main'>
-                {products.map((data, index) => {
+                {products?.map((data, index) => {
                     return (
                         <CartContent key={index} id={data.id} title={data.title} price={data.price} img={data.img} quantity={data.quantity} />
                     )

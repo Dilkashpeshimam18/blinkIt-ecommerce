@@ -10,7 +10,7 @@ import { NavLink } from 'react-router-dom'
 const Header = ({ setIsPane }) => {
     const { products, numberOfProduct, setNumberOfProduct, addProduct } = useContext(CartContext)
 
-    const quantity = products.reduce((currNum, product) => {
+    const quantity = products?.reduce((currNum, product) => {
         return currNum + product.quantity
     }, 0)
     useEffect(() => {

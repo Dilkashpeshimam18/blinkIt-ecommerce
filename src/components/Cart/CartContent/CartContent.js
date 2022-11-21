@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './CartContent.css'
 import Divider from '@mui/material/Divider';
 import CloseIcon from '../../assets/close.png'
@@ -6,6 +6,9 @@ import CartContext from '../../../store/cartContext';
 
 const CartContent = ({ id, title, price, img, quantity }) => {
     const { removeProduct, incrementQuantity, decrementQuantity } = useContext(CartContext)
+    useEffect(() => {
+        console.log(id)
+    }, [])
     return (
         <div className='cart'>
             <div className='cart__body'>
