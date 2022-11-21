@@ -2,27 +2,26 @@ import React, { useState, useContext, Suspense, useEffect } from 'react';
 import './App.css';
 import SlidingCart from './components/Cart/SlidingCart';
 import Header from './components/Header/Header';
-import Store from './components/Store/Store';
 import CartProvider from './store/CartProvider';
 import { Routes, Route, Navigate } from 'react-router-dom'
-// import Home from './components/Home/Home';
-import About from './components/About/About';
-import Contact from './components/Contact/Contact';
-import Login from './components/Login/Login';
-import SignUp from './components/SignUp/SignUp';
 import CartContext from './store/cartContext';
-import ProductDetail from './components/Product/ProductDetail';
 import CircularProgress from '@mui/material/CircularProgress';
 
 const Home = React.lazy(() => import('./components/Home/Home'))
+const Store = React.lazy(() => import('./components/Store/Store'))
+const About = React.lazy(() => import('./components/About/About'))
+const Contact = React.lazy(() => import('./components/Contact/Contact'))
+const Login = React.lazy(() => import('./components/Login/Login'))
+const SignUp = React.lazy(() => import('./components/SignUp/SignUp'))
+const ProductDetail = React.lazy(() => import('./components/Product/ProductDetail'))
 function App() {
   const [isPane, setIsPane] = useState(false)
   const { isLoggedIn } = useContext(CartContext)
-  useEffect(() => {
 
-  }, [])
   return (
-    <Suspense fallback={<CircularProgress style={{ fontSize: '100px' }} />}>
+    <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItem: 'center', paddingTop: '300px' }}>
+      <CircularProgress color='primary' size={100} />
+    </div>}>
 
       <CartProvider>
         <div className="app">
