@@ -42,7 +42,7 @@ function App() {
             <Route path='/login' element={<Login />
             } />
             <Route path='/sign-up' element={<SignUp />} />
-            <Route path='/product-detail' element={<ProductDetail />} />
+            <Route path='/product-detail/:id' element={<ProductDetail />} />
           </Routes>
         </div>
 
