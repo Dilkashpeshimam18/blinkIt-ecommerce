@@ -6,11 +6,10 @@ import CartContext from '../../../store/cartContext'
 import axios from 'axios'
 const Cart = ({ setIsPane }) => {
     const [cartData, setCartData] = useState([])
-    const { products, removeAll, total, email, getUserCart } = useContext(CartContext)
+    const { products, removeAll, total, } = useContext(CartContext)
 
 
     useEffect(() => {
-        getUserCart()
     }, [])
 
     const closeCart = () => {

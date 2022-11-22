@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import CartContext from './cartContext'
 import axios from 'axios'
-import { collection, addDoc, doc, setDoc, getDocs, updateDoc, deleteDoc } from 'firebase/firestore'
+import { collection, addDoc, doc, getDocs, updateDoc, deleteDoc } from 'firebase/firestore'
 import { db } from '../firebase/firebase'
+
 
 const CartProvider = (props) => {
     const [products, setProducts] = useState(() => {
@@ -50,12 +51,11 @@ const CartProvider = (props) => {
         localStorage.setItem('allProduct', JSON.stringify(products))
     }, [products])
 
+
     const addProduct = async (product) => {
-        let id = product.id
-        let existingItemIndex = products.findIndex(ele => ele.id === product.id)
-        let existingItem = products[existingItemIndex]
+        let productArray = JSON.parse(localStorage.getItem('allProduct'))
+        let existingItem = productArray.find(ele => ele.title === product.title)
         let updatedItem;
-        let updatedItems
         if (existingItem) {
             try {
                 updatedItem = {
@@ -63,13 +63,10 @@ const CartProvider = (props) => {
                     quantity: existingItem.quantity + product.quantity
                 }
 
-                setProducts((prevItem) => {
-                    updatedItems = [...prevItem]
-                    updatedItems[existingItemIndex] = updatedItem
-                    return updatedItems
-                })
-                const usercartdoc = doc(userCartRef, id)
+
+                const usercartdoc = doc(userCartRef, existingItem.id)
                 await updateDoc(usercartdoc, updatedItem)
+                getUserCart()
             } catch (err) {
                 console.log(err)
             }
@@ -77,14 +74,9 @@ const CartProvider = (props) => {
 
         } else {
             try {
-                setProducts((prevItem) => {
-                    let updatedItems = [...prevItem]
-                    updatedItems.push(product)
-                    return updatedItems
-                })
-                const updateEmail = email.replace('@', '').replace('.', '')
-                await addDoc(userCartRef, product)
 
+                await addDoc(userCartRef, product)
+                getUserCart()
 
             } catch (err) {
                 console.log(err)
@@ -92,7 +84,7 @@ const CartProvider = (props) => {
             }
         }
 
-        console.log(products)
+
 
     }
 
@@ -112,8 +104,23 @@ const CartProvider = (props) => {
 
 
     }
-    const removeAll = () => {
-        setProducts([])
+    const removeAll = async () => {
+        try {
+
+            const response = await getDocs(userCartRef)
+
+
+            const res = response.docs.forEach((doc) => {
+                deleteDoc(doc.ref)
+
+            })
+
+            setProducts([])
+            localStorage.setItem('allProduct', products)
+
+        } catch (err) {
+            console.log(err)
+        }
 
     }
 
@@ -210,11 +217,10 @@ const CartProvider = (props) => {
                 id: doc.id
 
             }))
-            console.log(res)
             setProducts(res)
             localStorage.setItem('allProduct', res)
         } catch (err) {
-
+            console.log(err)
         }
     }
 

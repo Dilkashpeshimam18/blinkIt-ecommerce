@@ -7,7 +7,6 @@ import CartContext from '../../../store/cartContext';
 const CartContent = ({ id, title, price, img, quantity }) => {
     const { removeProduct, incrementQuantity, decrementQuantity } = useContext(CartContext)
     useEffect(() => {
-        console.log(id)
     }, [])
     return (
         <div className='cart'>

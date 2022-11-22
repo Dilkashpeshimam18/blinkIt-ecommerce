@@ -16,7 +16,12 @@ const SignUp = React.lazy(() => import('./components/SignUp/SignUp'))
 const ProductDetail = React.lazy(() => import('./components/Product/ProductDetail'))
 function App() {
   const [isPane, setIsPane] = useState(false)
-  const { isLoggedIn } = useContext(CartContext)
+  const { getUserCart } = useContext(CartContext)
+
+  useEffect(() => {
+    console.log('app running')
+    getUserCart()
+  }, [])
 
   return (
     <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItem: 'center', paddingTop: '300px' }}>

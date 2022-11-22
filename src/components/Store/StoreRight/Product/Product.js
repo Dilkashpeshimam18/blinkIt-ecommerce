@@ -3,7 +3,7 @@ import './Product.css'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import CartContext from '../../../../store/cartContext';
 
-const Product = ({ id, title, price, img, quantity }) => {
+const Product = ({ title, price, img, quantity }) => {
     const { addProduct } = useContext(CartContext)
 
     return (
@@ -17,7 +17,6 @@ const Product = ({ id, title, price, img, quantity }) => {
                 </div>
                 <div onClick={() => {
                     addProduct({
-                        id: id,
                         title: title,
                         price: price,
                         img: img,

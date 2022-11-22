@@ -7,12 +7,13 @@ import StoreRight from './StoreRight/StoreRight'
 import { useNavigate } from 'react-router-dom'
 const Store = ({ setIsPane }) => {
     const [section, setSection] = useState('Store')
-    const { isLoggedIn } = useContext(CartContext)
+    const { isLoggedIn, getUserCart, products } = useContext(CartContext)
     const navigate = useNavigate()
     useEffect(() => {
         if (isLoggedIn == false) {
             navigate('/login')
         }
+        getUserCart()
     }, [])
     return (
         <div className='store'>
