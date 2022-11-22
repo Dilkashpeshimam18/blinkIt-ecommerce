@@ -118,9 +118,9 @@ export const Data = [
     },
     {
         // id: 4,
-        title: 'BORN PINK SWEATS',
+        title: 'BLACKPINK OFFICIAL LIGHT STICK',
         price: 450,
-        imageUrl: 'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/blackpinksweats_587x.png?v=1663265692',
+        imageUrl: 'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/LIGHTSTICK_grande_89223388-e239-485e-a5b4-9385e21408db_429x.png?v=1555519845',
         quantity: 1
 
     },
