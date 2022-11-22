@@ -13,7 +13,7 @@ const About = React.lazy(() => import('./components/About/About'))
 const Contact = React.lazy(() => import('./components/Contact/Contact'))
 const Login = React.lazy(() => import('./components/Login/Login'))
 const SignUp = React.lazy(() => import('./components/SignUp/SignUp'))
-const ProductDetail = React.lazy(() => import('./components/Product/ProductDetail'))
+const ProductDetail = React.lazy(() => import('./components/ProductDetail/ProductDetail'))
 function App() {
   const [isPane, setIsPane] = useState(false)
   const { getUserCart } = useContext(CartContext)

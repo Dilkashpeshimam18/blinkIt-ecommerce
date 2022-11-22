@@ -37,7 +37,7 @@ const CartContent = ({ id, title, price, img, quantity }) => {
                     </div>
 
                     <div className='cart__body__total'>
-                        <span className='cart__body__totalPrice'>$:{price}</span>
+                        <span className='cart__body__totalPrice'>Rs:{price}</span>
                     </div>
                     <div onClick={() => removeProduct(id)} className='cart__body__remove'>
                         <img style={{ height: "10px", width: '10px' }} src={CloseIcon} />

@@ -36,7 +36,7 @@ const Cart = ({ setIsPane }) => {
 
             <div className='cart__total'>
                 <h3 className='cart__total__title'>Total</h3>
-                <h2>$ {total}</h2>
+                <h2>Rs {total}</h2>
             </div>
             <div className='cart__buttons'>
 
