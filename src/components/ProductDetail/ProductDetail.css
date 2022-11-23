@@ -1,0 +1,118 @@
+.productDetail__container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  margin-left: 100px;
+}
+.productDetail {
+  display: flex;
+  flex-direction: column;
+}
+.productDetail__container1 {
+  height: 680px;
+  width: 800px;
+}
+.cart__body__quantity {
+  display: flex;
+  padding: 10px;
+  margin-bottom: 20px;
+  /* margin-left: 80px; */
+}
+.quantity__add {
+  height: 25px;
+  width: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+  padding-top: 10px;
+}
+.quantity__subtract {
+  /* background-color: #ffca40; */
+
+  height: 35px;
+  width: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  padding-top: 10px;
+}
+.productDetail__button {
+  height: 50px;
+  width: auto !important;
+  padding: 16px;
+  display: inline-block;
+  background-color: #3bc4d4;
+  border: none;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.productDetail__button:hover {
+  height: 50px;
+  width: auto !important;
+  padding: 16px;
+  display: inline-block;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.quantity {
+  background-color: #f9f9f9;
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+.productDetail__container2 {
+  padding-top: 130px;
+}
+.productDetail__reviewInput {
+  height: 50px;
+  width: 90%;
+  font-size: inherit;
+  box-sizing: border-box;
+}
+.productDetail__reviewTextArea {
+  min-height: 180px;
+  width: 90%;
+  font-size: inherit;
+  box-sizing: border-box;
+}
+.productDetail__reviewContainer {
+  padding-left: 125px;
+  margin-bottom: 30px;
+}
+.productDetail__reviewButton {
+  height: 50px;
+  width: 180px;
+  padding: 16px;
+  display: inline-block;
+  background-color: #3bc4d4;
+  border: none;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.productDetail__reviewButton:hover {
+  height: 50px;
+  width: 180px;
+  padding: 16px;
+  display: inline-block;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.productDetail__reviewButtonContainer {
+  margin-top: 1rem;
+}

@@ -54,9 +54,9 @@ export const Data = [
 
     {
         // id: 4,
-        title: 'THE SHOW BUCKET HAT I',
+        title: 'BLACKPINK BUCKET HAT',
         price: 400,
-        imageUrl: 'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BUCKETHAT1.png?v=1611673294',
+        imageUrl: 'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BucketHat_94587d32-ab20-47ac-88f8-3724b68cf73b.png?v=1668711662',
         quantity: 1
 
     },
