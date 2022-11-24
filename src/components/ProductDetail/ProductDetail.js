@@ -3,6 +3,10 @@ import './ProductDetail.css'
 import { useParams } from 'react-router-dom'
 import { Data } from '../Data/Data'
 import CartContext from '../../store/cartContext'
+import ReactImageMagnify from 'react-image-magnify';
+import { height, width } from '@mui/system'
+
+
 const ProductDetail = () => {
     const [productDetail, setProductDetail] = useState([{}])
     const [quantity, setQuantity] = useState(1)
@@ -10,21 +14,34 @@ const ProductDetail = () => {
     const [img, setImg] = useState('')
     const params = useParams()
     const { addProduct, } = useContext(CartContext)
-    const ref = useRef([])
-    ref.current = []
+    const refs = useRef([])
+    refs.current = []
     useEffect(() => {
         let data = Data
         let product = data.filter((item) => {
             return item.productId == params.id
         })
         setProductDetail(product[0])
-        console.log(productDetail)
     }, [params.id])
 
     const handleImgHover = (img, i) => {
         setImg(img)
+        let imgRef = refs.current
+        imgRef[i]?.classList.add('active')
+        let images = productDetail.subImg
+        for (let j = 0; j < images.length; j++) {
+            if (i !== j) {
+                imgRef[j]?.classList.remove('active')
+            }
+        }
     }
 
+    const addRefs = (el) => {
+        if (el && !refs.current.includes(el)) {
+            refs.current.push(el)
+        }
+
+    }
 
     return (
         <div className='productDetail'>
@@ -32,16 +49,31 @@ const ProductDetail = () => {
                 <div className='productDetail__subImages'>
                     {
                         productDetail.subImg?.map((image, i) => {
-                            return <div onMouseOver={() => handleImgHover(image, i)} className={i == 0 ? 'img__wrap active' : 'img__wrap'} key={i}>
+                            return <div ref={addRefs} onMouseOver={() => handleImgHover(image, i)} className={i == 0 ? 'img__wrap active' : 'img__wrap'} key={i}>
                                 <img src={image} alt='' />
                             </div>
                         })
                     }
                 </div>
-                <div className='productDetail__container1'>
-                    <img style={{ height: '640px', width: '640px', cursor: 'zoom-in' }} src={img != '' ? img : productDetail.imageUrl} />
 
+                <div className='productDetail__container1'>
+                    {/* <img style={{ height: '640px', width: '640px', cursor: 'zoom-in' }} src={img != '' ? img : productDetail.imageUrl} /> */}
+                    <ReactImageMagnify {...{
+                        smallImage: {
+                            alt: 'Blackpink product',
+                            src: img != '' ? img : productDetail.imageUrl,
+                            width: 640,
+                            height: 640
+
+                        },
+                        largeImage: {
+                            src: img != '' ? img : productDetail.imageUrl,
+                            width: 1200,
+                            height: 1500
+                        }
+                    }} />
                 </div>
+
                 <div className='productDetail__container2'>
                     <div className='productDetail__subContainer'>
                         <div className='productDetail__title'>
