@@ -4,21 +4,21 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import CartContext from '../../../../store/cartContext';
 import { Link } from 'react-router-dom';
 
-const Product = ({ title, price, img, quantity }) => {
-    const { addProduct } = useContext(CartContext)
 
+const Product = ({ productId, title, price, img, quantity, category, subImg }) => {
+    const { addProduct } = useContext(CartContext)
     return (
         <div className='product'>
             <img className='product__img' src={img} />
             <div className='product__container'>
                 <div className='product__body'>
-
-                    <Link style={{ textDecoration: 'none' }} to={'/product-detail/' + title}>
+                    <Link style={{ textDecoration: 'none' }} to={'/product-detail/' + productId}>
                         <span style={{ marginTop: '10px' }} className='sales__title'>{title}</span>  </Link>
                     <span style={{ paddingTop: "5px" }} className='sales__price'>Rs {price}</span>
                 </div>
                 <div onClick={() => {
                     addProduct({
+                        productId: productId,
                         title: title,
                         price: price,
                         img: img,
