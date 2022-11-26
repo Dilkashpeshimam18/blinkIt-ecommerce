@@ -3,6 +3,7 @@ import './CartContent.css'
 import Divider from '@mui/material/Divider';
 import CloseIcon from '../../assets/close.png'
 import CartContext from '../../../store/cartContext';
+import ProductQuantity from '../../ProductQuantity/ProductQuantity';
 
 const CartContent = ({ id, title, price, img, quantity }) => {
     const { removeProduct, incrementQuantity, decrementQuantity } = useContext(CartContext)
@@ -19,23 +20,7 @@ const CartContent = ({ id, title, price, img, quantity }) => {
 
                     </div>
 
-                    <div className='cart__quantityContainer'>
-                        <span className='cart__body__quantityTitle' >Quantity</span>
-                        {/* <span className='cart__body__quantityTotal'>{quantity}</span> */}
-                        <div className='cart__body__quantity'>
-                            <div onClick={() => decrementQuantity(id)} className='quantity__subtract'>
-                                <span style={{ marginLeft: '12px' }}>-</span>
-                            </div>
-                            <div className='quantity'>
-                                {quantity}
-                            </div>
-
-                            <div onClick={() => incrementQuantity(id)} className='quantity__add'>
-                                <span style={{ marginLeft: '9px' }}> +</span>
-                            </div>
-                        </div>
-                    </div>
-
+                    <ProductQuantity quantity={quantity} id={id} />
                     <div className='cart__body__total'>
                         <span className='cart__body__totalPrice'>Rs:{price}</span>
                     </div>
