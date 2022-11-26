@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import CartContext from './cartContext'
-import axios from 'axios'
 import { collection, addDoc, doc, getDocs, updateDoc, deleteDoc } from 'firebase/firestore'
 import { db } from '../firebase/firebase'
 
