@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import './ProductItems.css'
 import { Data } from '../../../Data/Data'
 import Product from '../Product/Product'
+import CartContext from '../../../../store/cartContext'
 
 const ProductItems = () => {
-    const [data, setData] = useState([])
+    const { data, setData } = useContext(CartContext)
     useEffect(() => {
         let data = Data
         setData(data)

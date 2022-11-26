@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState, Suspense } from 'react'
 import CartContext from '../../store/cartContext'
 import SubSection from '../SubSection/SubSection'
 import './Store.css'
 import StoreLeft from './StoreLeft/StoreLeft'
 import StoreRight from './StoreRight/StoreRight'
 import { useNavigate } from 'react-router-dom'
+
 const Store = ({ setIsPane }) => {
     const [section, setSection] = useState('Store')
     const { isLoggedIn, getUserCart, products } = useContext(CartContext)
@@ -16,6 +17,7 @@ const Store = ({ setIsPane }) => {
         getUserCart()
     }, [])
     return (
+
         <div className='store'>
             <SubSection section={section} />
             <div className='store__Container'>

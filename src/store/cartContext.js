@@ -14,7 +14,8 @@ const CartContext = createContext({
     isLoggedIn: false,
     login: (token) => { },
     email: '',
-    getUserCart: () => { }
+    getUserCart: () => { },
+    data: []
 
 
 })

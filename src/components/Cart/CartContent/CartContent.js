@@ -7,8 +7,7 @@ import ProductQuantity from '../../ProductQuantity/ProductQuantity';
 
 const CartContent = ({ id, title, price, img, quantity }) => {
     const { removeProduct, incrementQuantity, decrementQuantity } = useContext(CartContext)
-    useEffect(() => {
-    }, [])
+
     return (
         <div className='cart'>
             <div className='cart__body'>

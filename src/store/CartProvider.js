@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react'
 import CartContext from './cartContext'
 import { collection, addDoc, doc, getDocs, updateDoc, deleteDoc } from 'firebase/firestore'
 import { db } from '../firebase/firebase'
-
+import { Data } from '../components/Data/Data'
 
 const CartProvider = (props) => {
     const [products, setProducts] = useState(() => {
@@ -24,8 +24,7 @@ const CartProvider = (props) => {
             return ''
         }
     })
-    const [userCart, setUserCart] = useState([])
-
+    const [data, setData] = useState([])
     const [isLoggedIn, setIsLoggedIn] = useState(() => {
         if (localStorage.getItem('tokenId')) {
             return true
@@ -50,6 +49,10 @@ const CartProvider = (props) => {
         localStorage.setItem('allProduct', JSON.stringify(products))
     }, [products])
 
+    useEffect(() => {
+        let data = Data
+        setData(data)
+    }, [Data])
 
     const addProduct = async (product) => {
         let productArray = JSON.parse(localStorage.getItem('allProduct'))
@@ -237,7 +240,9 @@ const CartProvider = (props) => {
         isLoggedIn: isLoggedIn,
         login: login,
         email: email,
-        getUserCart: getUserCart
+        getUserCart: getUserCart,
+        data: data,
+        setData: setData
     }
     return (
         <CartContext.Provider value={cartValue}>
