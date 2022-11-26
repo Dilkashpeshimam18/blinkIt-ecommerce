@@ -133,7 +133,7 @@ export const Data = [
     {
         productId: 10,
         title: 'ICE CREAM CREWNECK PULLOVER',
-        price: 600,
+        price: 800,
         imageUrl: 'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BPSG_DyeF_faec3f21-5d3a-46e7-8beb-c863ba115477.png?v=1598016743',
         quantity: 1,
         subImg: [

@@ -4,6 +4,7 @@ import { Data } from '../../Data/Data'
 import CartContent from '../CartContent/CartContent'
 import CartContext from '../../../store/cartContext'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 const Cart = ({ setIsPane }) => {
     const [cartData, setCartData] = useState([])
     const { products, removeAll, total, } = useContext(CartContext)
@@ -41,7 +42,9 @@ const Cart = ({ setIsPane }) => {
             <div className='cart__buttons'>
 
                 <button onClick={closeCart} className='cart__cancel'>Cancel</button>
-                <button className='cart__button'>Order</button>
+
+                <button type='submit' className='cart__button'>Order</button>
+
 
 
 

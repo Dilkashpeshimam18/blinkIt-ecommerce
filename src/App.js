@@ -6,6 +6,7 @@ import CartProvider from './store/CartProvider';
 import { Routes, Route, Navigate } from 'react-router-dom'
 import CartContext from './store/cartContext';
 import CircularProgress from '@mui/material/CircularProgress';
+import StripeContainer from './components/Payment/StripeContainer';
 
 const Home = React.lazy(() => import('./components/Home/Home'))
 const Store = React.lazy(() => import('./components/Store/Store'))
@@ -43,6 +44,7 @@ function App() {
             } />
             <Route path='/sign-up' element={<SignUp />} />
             <Route path='/product-detail/:id' element={<ProductDetail />} />
+            <Route path='/payment' element={<StripeContainer />} />
           </Routes>
         </div>
 
