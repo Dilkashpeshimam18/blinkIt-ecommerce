@@ -16,7 +16,7 @@ const ProductDetailReview = () => {
     let productReviewRef;
 
     if (email != '') {
-        productReviewRef = collection(collection(db, 'productReview'), email, params.id)
+        productReviewRef = collection(collection(db, 'productReview'), params.id, params.id)
 
     } else {
         productReviewRef = collection(db, 'productReview')
