@@ -3,6 +3,7 @@ import { db } from '../../firebase/firebase'
 import { collection, addDoc, getDocs, } from 'firebase/firestore'
 import CartContext from '../../store/cartContext'
 import { useParams } from 'react-router-dom'
+import Avatar from '@mui/material/Avatar';
 
 
 const ProductDetailReview = () => {
@@ -61,17 +62,26 @@ const ProductDetailReview = () => {
             <h4 style={{ color: '#444444', fontSize: '20px' }}>
                 Reviews
             </h4>
+            <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '35px' }} className='productDetail__singleReview'>
 
-            <>
                 {allReview.map((review, i) => {
                     return (
-                        <div key={i}>
-                            <h5>{review.name}</h5>
-                            <p>{review.review}</p>
+                        <div style={{ display: 'flex' }}>
+                            <div className='productDetail__userImg'>
+                                <Avatar />
+
+                            </div>
+                            <div key={i}>
+                                <h5>{review.name}</h5>
+                                <p style={{ color: '#444444' }}>{review.review}</p>
+                            </div>
                         </div>
+
                     )
                 })}
-            </>
+
+
+            </div>
 
 
 
