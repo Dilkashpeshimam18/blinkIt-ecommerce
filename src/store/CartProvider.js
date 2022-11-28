@@ -32,6 +32,7 @@ const CartProvider = (props) => {
             return false
         }
     })
+    const [homeData, setHomeData] = useState([])
 
     let total = products?.reduce((currAmount, item) => {
         return currAmount + item.price * item.quantity
@@ -52,6 +53,10 @@ const CartProvider = (props) => {
     useEffect(() => {
         let data = Data
         setData(data)
+        let homedata = Data.filter((data) => {
+            return data.category == 'T-Shirt'
+        })
+        setHomeData(homeData)
     }, [Data])
 
     const addProduct = async (product) => {
@@ -242,7 +247,9 @@ const CartProvider = (props) => {
         email: email,
         getUserCart: getUserCart,
         data: data,
-        setData: setData
+        setData: setData,
+        homeData: homeData,
+        setHomeData: setHomeData
     }
     return (
         <CartContext.Provider value={cartValue}>

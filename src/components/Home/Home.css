@@ -66,3 +66,17 @@
   margin-top: 20px;
   margin-bottom: 30px;
 }
+
+.rec.rec-arrow {
+}
+.rec.rec-arrow:hover {
+  background-color: #3bc4d4;
+  color: white;
+}
+.rec.rec-arrow:focus {
+  background-color: #3bc4d4;
+  color: white;
+}
+.rec-carousel-item:focus {
+  color: white;
+}
