@@ -13,7 +13,8 @@ const Home = () => {
             return data.category == 'T-Shirt'
         })
         setHomeData(data)
-    }, [])
+        console.log(homeData)
+    }, [Data])
     return (
         <div className='home'>
             <Carousel itemsToShow={1} enableAutoPlay autoPlaySpeed={1800}>

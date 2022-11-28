@@ -53,10 +53,7 @@ const CartProvider = (props) => {
     useEffect(() => {
         let data = Data
         setData(data)
-        let homedata = Data.filter((data) => {
-            return data.category == 'T-Shirt'
-        })
-        setHomeData(homeData)
+
     }, [Data])
 
     const addProduct = async (product) => {

@@ -18,6 +18,10 @@
   cursor: pointer;
   font-weight: 550;
 }
+.cart__button:hover {
+  background-color: #3bc4d4;
+  color: white;
+}
 .cart__cancel {
   width: 250px;
   height: 40px;
@@ -28,7 +32,11 @@
   cursor: pointer;
   font-weight: 600;
 }
-
+.cart__cancel:hover {
+  background-color: #3bc4d4;
+  color: white;
+  border: none;
+}
 .cart__total__title {
   padding-top: 5px;
 }
