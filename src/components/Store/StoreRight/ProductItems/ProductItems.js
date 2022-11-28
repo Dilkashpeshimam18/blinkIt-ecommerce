@@ -3,16 +3,13 @@ import './ProductItems.css'
 import { Data } from '../../../Data/Data'
 import Product from '../Product/Product'
 import CartContext from '../../../../store/cartContext'
+import Pagination from '../Pagination/Pagination'
 
-const ProductItems = () => {
-    const { data, setData } = useContext(CartContext)
-    useEffect(() => {
-        let data = Data
-        setData(data)
-    }, [Data])
+const ProductItems = ({ products }) => {
+
     return (
         <div className='productItems'>
-            {data.map((item, index) => {
+            {products.map((item, index) => {
                 return (
                     <Product key={index} productId={item.productId} title={item.title} price={item.price} img={item.imageUrl} quantity={item.quantity} category={item.category} subImg={item.subImg} />
                 )
