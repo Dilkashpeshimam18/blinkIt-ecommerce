@@ -121,6 +121,9 @@ const ProductDetail = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className='productDetail__desc'>
+                            <p style={{ fontSize: '12px', padding: '5px', fontWeight: '400', lineHeight: '1rem' }}>{productDetail.description}</p>
+                        </div>
                         <div className='productDetail__buttonContainer'>
                             <button onClick={() => {
                                 addProduct({
@@ -134,6 +137,7 @@ const ProductDetail = () => {
                             }} className='productDetail__button'
                             > ADD TO CART</button>
                         </div>
+
                     </div>
 
                 </div>

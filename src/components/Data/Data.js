@@ -10,7 +10,8 @@ export const Data = [
             'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/longsleeveshutdownf.png?v=1663265944',
             'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/longsleeveshutdownb.png?v=1663265945'
         ],
-        category: 'T-Shirt'
+        category: 'T-Shirt',
+        description: 'Screenprint front + back graphics'
 
 
     },
@@ -24,7 +25,8 @@ export const Data = [
             'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BPSG_ICDyeTF.png?v=1598016592',
             'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BPSG_ICDyeTB.png?v=1598016593'
         ],
-        category: 'T-Shirt'
+        category: 'T-Shirt',
+        description: 'Pastel tie-dyed tee featuring screenprinted ice cream graphic.'
 
 
     },
@@ -37,7 +39,8 @@ export const Data = [
         subImg: [
             'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/4CROPTEE_587x.png?v=1660848493'
         ],
-        category: 'T-Shirt'
+        category: 'T-Shirt',
+        description: 'Screenprint front graphic.'
 
 
     },
@@ -51,7 +54,8 @@ export const Data = [
             'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BPSG_PnkLSF_0d2b356b-059a-4a3d-ad53-98d5f46df339.png?v=1598016697',
             'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BPSG_PnkLSB_801fe997-a4a1-40f8-bb46-e828ccf612fe.png?v=1598016697,'
         ],
-        category: 'T-Shirt'
+        category: 'T-Shirt',
+        description: 'Pink long sleeve tee featuring screenprinted ice cream graphic on the front.'
 
 
     },
@@ -65,7 +69,8 @@ export const Data = [
             'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/shutdowndadhat.png?v=1663265819',
 
         ],
-        category: 'Accessories'
+        category: 'Accessories',
+        description: 'Embroidered dad hat'
 
 
     },
@@ -81,7 +86,8 @@ export const Data = [
             'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/shutdownbp.png?v=1663265893'
 
         ],
-        category: 'T-Shirt'
+        category: 'T-Shirt',
+        description: 'Screenprint front graphic'
 
 
     },
@@ -97,7 +103,8 @@ export const Data = [
             'https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BucketHat_94587d32-ab20-47ac-88f8-3724b68cf73b.png?v=1668711662'
 
         ],
-        category: 'Accessories'
+        category: 'Accessories',
+        description: 'Embroidered graphic'
 
 
     },
@@ -112,7 +119,8 @@ export const Data = [
 
 
         ],
-        category: 'Accessories'
+        category: 'Accessories',
+        description: 'METAL KEYCHAIN FEATURING BLACKPINK THE SHOW GRAPHICS'
 
 
     },
@@ -127,7 +135,8 @@ export const Data = [
 
 
         ],
-        category: 'Album'
+        category: 'Album',
+        description: 'Tracklist: 1. How You Like That 2. Ice Cream (feat. Selena Gomez) 3. Pretty Savage 4. Bet You Wanna (feat. Cardi B) 5. Lovesick Girls 6. Crazy Over You 7. Love To Hate Me 8. You Never Know '
 
     },
     {
@@ -142,7 +151,8 @@ export const Data = [
 
 
         ],
-        category: 'T-Shirt'
+        category: 'T-Shirt',
+        description: 'TIE-DYE CREWNECK PULLOVER FEATURING SCREENPRINTED ICE CREAM GRAPHICS ON BOTH FRONT AND BACK'
 
 
     },
@@ -158,7 +168,9 @@ export const Data = [
 
 
         ],
-        category: 'Accessories'
+        category: 'Accessories',
+        description: 'PINK TINTED ICE CREAM SUNGLASSES, INCLUDES A DRAWSTRING POUCH.'
+
 
 
     },
@@ -173,7 +185,9 @@ export const Data = [
 
 
         ],
-        category: 'Accessories'
+        category: 'Accessories',
+        description: 'Custom silver with enamel necklace'
+
 
 
     },
@@ -188,7 +202,9 @@ export const Data = [
 
 
         ],
-        category: 'Accessories'
+        category: 'Accessories',
+        description: 'WHITE, PINK & BLACK SCRUNCHIE SET FEATURING BLACKPINK THE SHOW GRAPHICS'
+
 
 
     },
@@ -204,7 +220,9 @@ export const Data = [
 
 
         ],
-        category: 'T-Shirt'
+        category: 'T-Shirt',
+        description: 'Black unisex crewneck tee featuring BLACKPINK The Show graphics.'
+
 
     },
     {
@@ -218,7 +236,9 @@ export const Data = [
 
 
         ],
-        category: 'Accessories'
+        category: 'Accessories',
+        description: 'Black and pink lightstick'
+
 
     },
 
