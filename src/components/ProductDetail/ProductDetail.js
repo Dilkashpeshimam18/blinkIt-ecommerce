@@ -50,11 +50,11 @@ const ProductDetail = () => {
     const handleImgHover = (img, i) => {
         setImg(img)
         let imgRef = refs.current
-        imgRef[i]?.classList.add('active')
+        imgRef[i]?.classList.add('active-img')
         let images = productDetail.subImg
         for (let j = 0; j < images.length; j++) {
             if (i !== j) {
-                imgRef[j]?.classList.remove('active')
+                imgRef[j]?.classList.remove('active-img')
             }
         }
     }
@@ -72,7 +72,7 @@ const ProductDetail = () => {
                 <div className='productDetail__subImages'>
                     {
                         productDetail.subImg?.map((image, i) => {
-                            return <div ref={addRefs} onMouseOver={() => handleImgHover(image, i)} className={i == 0 ? 'img__wrap active' : 'img__wrap'} key={i}>
+                            return <div ref={addRefs} onMouseOver={() => handleImgHover(image, i)} className={i == 0 ? 'img__wrap active-img' : 'img__wrap'} key={i}>
                                 <img src={image} alt='' />
                             </div>
                         })
