@@ -2,7 +2,8 @@ import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import CartContext from '../../store/cartContext'
-
+import SubSection from '../SubSection/SubSection'
+import './SignUp.css'
 const SignUp = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -36,18 +37,29 @@ const SignUp = () => {
     }
     return (
         <div>
-            <form onSubmit={handleSignUp}>
-                <div>
-                    <h3>Email</h3>
-                    <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <SubSection section='Sign up' />
+            <div className='login__container'>
+                <div className='login__subContainer'>
+                    <form onSubmit={handleSignUp}>
+                        <h2>SIGN UP</h2>
+                        <div className='login__inputContainer'>
+                            <h3 className='login__subTitle'>Email</h3>
+                            <input className='login__input' type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                        </div>
+                        <div className='login__inputContainer'>
+                            <h3 className='login__subTitle'>Password</h3>
+                            <input className='login__input' type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
+                        </div>
+                        <button className='login__button'>SIGN UP</button>
+                    </form>
+                    <div className='login__link'>
+                        <Link style={{ textDecoration: 'none', color: 'black', fontWeight: 'bolder' }} to='/login'><h3 style={{ cursor: 'pointer', fontSize: '13px' }}>Login with existing account</h3></Link>
+
+                    </div>
+
                 </div>
-                <div>
-                    <h3>Password</h3>
-                    <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <button>Sign Up</button>
-            </form>
-            <Link to='/login'><p>Login with existing account</p></Link>
+            </div>
+
         </div>
     )
 }
