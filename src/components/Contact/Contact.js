@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import './Contact.css'
 import axios from 'axios'
+import SubSection from '../SubSection/SubSection'
 
 const Contact = () => {
     const [name, setName] = useState('')
@@ -26,20 +27,28 @@ const Contact = () => {
     })
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <h3>Name</h3>
-                    <input value={name} onChange={(e) => setName(e.target.value)} />
+            <SubSection section='Contact Us' />
+            <div className='login__container'>
+                <div className='login__subContainer'>
+                    <form onSubmit={handleSubmit}>
+                        <h2>CONTACT US</h2>
+
+                        <div className='login__inputContainer'>
+                            <h3 className='login__subTitle'>Name</h3>
+                            <input className='login__input' value={name} onChange={(e) => setName(e.target.value)} />
+                        </div>
+                        <div className='login__inputContainer'>
+                            <h3 className='login__subTitle'>Email</h3>
+                            <input className='login__input' value={email} onChange={(e) => setEmail(e.target.value)} />
+                        </div >      <div className='login__inputContainer'>
+                            <h3 className='login__subTitle'>Phone Number</h3>
+                            <input className='login__input' value={phone} onChange={(e) => setPhone(e.target.value)} />
+                        </div>
+                        <button className='contact__button' type='submit'>Send</button>
+                    </form>
                 </div>
-                <div>
-                    <h3>Email</h3>
-                    <input value={email} onChange={(e) => setEmail(e.target.value)} />
-                </div>      <div>
-                    <h3>Phone Number</h3>
-                    <input value={phone} onChange={(e) => setPhone(e.target.value)} />
-                </div>
-                <button>Send</button>
-            </form>
+            </div>
+
         </div >
     )
 }
