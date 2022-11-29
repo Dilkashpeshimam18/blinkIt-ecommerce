@@ -80,3 +80,7 @@
 .rec-carousel-item:focus {
   color: white;
 }
+.rec.rec-dot {
+  background-color: white;
+  box-shadow: 0 0 1px 3px gray;
+}
