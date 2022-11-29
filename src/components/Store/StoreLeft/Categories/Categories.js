@@ -34,6 +34,11 @@ const Categories = () => {
         setData(filter)
     }
 
+    const handleAll = () => {
+        let data = Data
+        setData(data)
+    }
+
     return (
         <div className='categories'>
             <h3 className='categories__title'>Categories</h3>
@@ -41,7 +46,7 @@ const Categories = () => {
                 <li onClick={handleAlbum} className='cat__item'>Album</li>
                 <li onClick={handleTshirt} className='cat__item'>T-shirts</li>
                 <li onClick={handleAccessories} className='cat__item'>Accessories</li>
-
+                <li onClick={handleAll} className='cat__item'>All</li>
             </ul>
 
         </div>
