@@ -5,11 +5,15 @@ import './Store.css'
 import StoreLeft from './StoreLeft/StoreLeft'
 import StoreRight from './StoreRight/StoreRight'
 import { useNavigate } from 'react-router-dom'
+import Logout from '../Logout/Logout'
 
 const Store = ({ setIsPane }) => {
     const [section, setSection] = useState('Store')
-    const { isLoggedIn, getUserCart, products } = useContext(CartContext)
+    const { isLoggedIn, getUserCart, products, showLogout, setShowLogout } = useContext(CartContext)
     const navigate = useNavigate()
+    const handleClose = () => {
+        setShowLogout(false)
+    }
     useEffect(() => {
         if (isLoggedIn == false) {
             navigate('/login')
@@ -25,6 +29,7 @@ const Store = ({ setIsPane }) => {
                 <StoreRight />
 
             </div>
+            {showLogout == true && <Logout handleClose={handleClose} />}
         </div>
     )
 }

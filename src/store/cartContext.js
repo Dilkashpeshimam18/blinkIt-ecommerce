@@ -19,7 +19,9 @@ const CartContext = createContext({
     homeData: [],
     searchProduct: '',
     searchHandler: (currLocation) => { },
-    isFilter: false
+    isFilter: false,
+    logout: () => { },
+    showLogout: false
 
 
 })

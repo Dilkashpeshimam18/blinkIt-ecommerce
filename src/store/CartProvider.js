@@ -36,6 +36,7 @@ const CartProvider = (props) => {
     const [homeData, setHomeData] = useState([])
     const [searchProduct, setSearchProduct] = useState('')
     const [isFilter, setIsFilter] = useState(false)
+    const [showLogout, setShowLogout] = useState(false)
     let total = products?.reduce((currAmount, item) => {
         return currAmount + item.price * item.quantity
     }, 0)
@@ -264,7 +265,16 @@ const CartProvider = (props) => {
         }
 
     }
-
+    const logout = () => {
+        setToken(null)
+        setEmail('')
+        setProducts([])
+        setIsLoggedIn(false)
+        setShowLogout(false)
+        localStorage.removeItem('tokenId')
+        localStorage.removeItem('userEmail')
+        localStorage.removeItem('allProduct')
+    }
     let cartValue = {
         products: products,
         numberOfProduct: numberOfProduct,
@@ -286,7 +296,10 @@ const CartProvider = (props) => {
         setHomeData: setHomeData,
         searchProduct: searchProduct,
         setSearchProduct: setSearchProduct,
-        searchHandler: searchHandler
+        searchHandler: searchHandler,
+        logout: logout,
+        showLogout: showLogout,
+        setShowLogout: setShowLogout
     }
     return (
         <CartContext.Provider value={cartValue}>

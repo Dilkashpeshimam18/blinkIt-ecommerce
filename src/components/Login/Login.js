@@ -8,12 +8,13 @@ import SubSection from '../SubSection/SubSection'
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const { login, isLoggedIn } = useContext(CartContext)
+    const { login, isLoggedIn, showLogout, setShowLogout } = useContext(CartContext)
     const navigate = useNavigate()
 
     useEffect(() => {
         if (isLoggedIn == true) {
             navigate('/store')
+            setShowLogout(true)
         }
     }, [])
     const handleSubmit = async (e) => {

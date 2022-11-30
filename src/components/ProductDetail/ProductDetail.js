@@ -7,7 +7,7 @@ import ReactImageMagnify from 'react-image-magnify';
 import { height, width } from '@mui/system'
 import ProductDetailReview from './ProductDetailReview'
 import ProductQuantity from '../ProductQuantity/ProductQuantity'
-
+import { useNavigate } from 'react-router-dom'
 
 const ProductDetail = () => {
     const [productDetail, setProductDetail] = useState([{}])
@@ -15,10 +15,10 @@ const ProductDetail = () => {
     const [isSelected, setIsSelected] = useState(false)
     const [img, setImg] = useState('')
     const params = useParams()
-    const { addProduct, } = useContext(CartContext)
+    const { addProduct, isLoggedIn } = useContext(CartContext)
     const refs = useRef([])
     refs.current = []
-
+    const navigate = useNavigate()
     const handleAdd = () => {
         if (quantity <= 4) {
             setQuantity((prev) => prev + 1)
@@ -40,6 +40,9 @@ const ProductDetail = () => {
         }
     }
     useEffect(() => {
+        if (isLoggedIn == false) {
+            navigate('/login')
+        }
         let data = Data
         let product = data.filter((item) => {
             return item.productId == params.id
