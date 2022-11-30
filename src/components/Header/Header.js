@@ -22,7 +22,7 @@ const Header = ({ setIsPane }) => {
             <div className='header__Container'>
                 <div className='header__Left'>
                     <div className='header__Icon'>
-                        <h4>BLINK FOREVER</h4>
+                        <h4 style={{ fontWeight: 'bold', fontStyle: 'italic', }}>BLINK IT</h4>
                     </div>
 
                 </div>

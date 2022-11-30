@@ -12,17 +12,16 @@ const About = () => {
 
             <div className='about__container'>
                 <div className='about__imgContainer'>
-                    <Avatar style={{ width: '300px', height: '300px' }} src='https://i.pinimg.com/originals/1e/81/ea/1e81ea71bb04d4350d3533d83675e3c7.jpg' />
+                    <Avatar style={{ width: '300px', height: '300px' }} src='https://render.fineartamerica.com/images/rendered/square-product/small/images/rendered/default/flat/round-beach-towel/images/artworkimages/medium/3/5-blackpink-lala-lazodi-transparent.png?&targetx=139&targety=120&imagewidth=510&imageheight=548&modelwidth=788&modelheight=788&backgroundcolor=000000&orientation=0' />
 
                 </div>
                 <div className='about__contentContainer'>
-                    <h2>BLINKS FOREVER</h2>
-                    <p>
-                        Lorem ipsum carrots enhanced rebates. Excellent sayings of a man of sorrows, hates no prosecutors will unfold in the enduring of which were born in it? Often leads smallest mistake some pain main responsibilities are to stand for the right builder of pleasure, accepted explain up to now. , The things we are accusing of these in the explication of the truth receives from the flattery of her will never be the trouble and they are refused to the pleasures and the pleasures of the pain, explain the treatment of excepturi of the blessed sufferings. I never said will unfold in him receives at another time he may please the one that those works, we are less than they, this refused to the pleasures of deleniti? Those are! Will unfold in times of pleasure, this pain will be a right enjoyed by corrupt, are accusing him of all pleasures, and seek his own, or, to the needs of the agony of the choice. We hate the fellow.
-                        Lorem ipsum dolor, sit amet consectetur rebates. The distinction, that arise from or to. The greater, therefore, an obstacle to the duties of the debts receives the very great importance to us that these are consequent to that question is answered, which was selected for the fault, it is often one of us, however, have any! Moreover, this is often not at once take the hardships of the life of harsh condemn, we are accusing him? Him whom something large cisterns.
-
-                        The Generic
+                    <h2 style={{ fontWeight: 'bolder', fontStyle: 'italic', }}>BLINKS IT</h2>
+                    <p style={{ fontWeight: 'bold', fontStyle: 'italic' }}>
+                        BLINK IT is a onlline shopping store where you can buy blackpink latest merch & album at reasonable rate in India.
+                        Choose latest T-shirts & accessories from wide choice of collection. Secure payment & shipping 4-5 business days. Made in India with love.
                     </p>
+                    <p style={{ fontWeight: 'bold', fontStyle: 'italic', }}>Happy shopping!</p>
 
                 </div>
             </div>
