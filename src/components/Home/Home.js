@@ -46,6 +46,20 @@ const Home = () => {
 
 
                 </div>
+                <div className='home__container'>
+                    <div className='home__container1' >
+                        <h1 className='home__title'>
+                            BUY ICE CREAM T-SHIRT & ACCESSORIES
+                        </h1>
+                        <Link to='/store'><button className='home__btn'>BUY NOW</button></Link>
+                    </div>
+                    <div className='home__container2'>
+                        <img style={{ width: '400px', height: '400px' }} src='https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BPSG_DyeF_faec3f21-5d3a-46e7-8beb-c863ba115477.png?v=1598016743' />
+
+                    </div>
+
+
+                </div>
             </Carousel>
 
             <div className='home__container2'>

@@ -19,8 +19,9 @@
   margin-bottom: 30px;
 }
 .contact__button {
-  background-color: #3bc4d4;
-  border-color: #3bc4d4;
+  background-color: black;
+  color: white;
+
   color: white;
   width: 500px;
   height: 50px;
@@ -29,8 +30,8 @@
   cursor: pointer;
 }
 .contact__button:hover {
-  background-color: black;
-  color: white;
+  background-color: #3bc4d4;
+  border-color: #3bc4d4;
 }
 .login__link {
   padding-top: 10px;
