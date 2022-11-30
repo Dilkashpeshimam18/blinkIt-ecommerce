@@ -20,7 +20,7 @@ const Contact = () => {
             setName('')
             setEmail('')
             setPhone('')
-
+            alert('We will get back to you soon!')
         } catch (err) {
             console.log(err)
         }
