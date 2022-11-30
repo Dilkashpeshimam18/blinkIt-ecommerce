@@ -3,6 +3,7 @@ import CartContext from './cartContext'
 import { collection, addDoc, doc, getDocs, updateDoc, deleteDoc } from 'firebase/firestore'
 import { db } from '../firebase/firebase'
 import { Data } from '../components/Data/Data'
+import { useNavigate } from 'react-router-dom'
 
 const CartProvider = (props) => {
     const [products, setProducts] = useState(() => {
@@ -33,10 +34,12 @@ const CartProvider = (props) => {
         }
     })
     const [homeData, setHomeData] = useState([])
-
+    const [searchProduct, setSearchProduct] = useState('')
+    const [isFilter, setIsFilter] = useState(false)
     let total = products?.reduce((currAmount, item) => {
         return currAmount + item.price * item.quantity
     }, 0)
+    const navigate = useNavigate()
     let userCartRef;
     if (email != '') {
         userCartRef = collection(collection(db, 'userCart'), email, email)
@@ -228,6 +231,40 @@ const CartProvider = (props) => {
         }
     }
 
+    const searchHandler = (currLocation) => {
+        if (currLocation == '/store') {
+
+            navigate('/')
+            const filterItem = Data.filter((data) => {
+                return data.title.toLowerCase().includes(searchProduct.toLowerCase())
+            })
+            setHomeData(filterItem)
+        } else if (currLocation == '/about') {
+
+            navigate('/')
+            const filterItem = Data.filter((data) => {
+                return data.title.toLowerCase().includes(searchProduct.toLowerCase())
+            })
+            setHomeData(filterItem)
+
+        } else if (currLocation == '/contact') {
+
+            navigate('/')
+            const filterItem = Data.filter((data) => {
+                return data.title.toLowerCase().includes(searchProduct.toLowerCase())
+            })
+            setHomeData(filterItem)
+
+        } else {
+
+            const filterItem = Data.filter((data) => {
+                return data.title.toLowerCase().includes(searchProduct.toLowerCase())
+            })
+            setHomeData(filterItem)
+        }
+
+    }
+
     let cartValue = {
         products: products,
         numberOfProduct: numberOfProduct,
@@ -246,7 +283,10 @@ const CartProvider = (props) => {
         data: data,
         setData: setData,
         homeData: homeData,
-        setHomeData: setHomeData
+        setHomeData: setHomeData,
+        searchProduct: searchProduct,
+        setSearchProduct: setSearchProduct,
+        searchHandler: searchHandler
     }
     return (
         <CartContext.Provider value={cartValue}>

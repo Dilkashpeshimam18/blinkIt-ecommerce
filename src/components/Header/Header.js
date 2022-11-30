@@ -1,18 +1,27 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Header.css'
 import BlackpinkLogo from '../assets/blackpinklogo.png'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import CartContext from '../../store/cartContext';
+import SearchBox from '../SearchBox/SearchBox';
 import { NavLink } from 'react-router-dom'
 
 const Header = ({ setIsPane }) => {
+    const [showSearch, setShowSearch] = useState(false)
     const { products, numberOfProduct, setNumberOfProduct, addProduct } = useContext(CartContext)
 
     const quantity = products?.reduce((currNum, product) => {
         return currNum + product.quantity
     }, 0)
+    const handleClickOpen = () => {
+        setShowSearch(true);
+    };
+
+    const handleClose = () => {
+        setShowSearch(false);
+    };
     useEffect(() => {
         setNumberOfProduct(quantity)
 
@@ -41,7 +50,7 @@ const Header = ({ setIsPane }) => {
                             <NavLink style={{ textDecoration: 'none' }} to='/contact'><p style={{ fontFamily: "Montserrat" }}>CONTACT US</p></NavLink>
                         </div>
                         <div className='header__icons'>
-                            <div className='header__singleIcon'>
+                            <div style={{ cursor: 'pointer' }} onClick={handleClickOpen} className='header__singleIcon'>
                                 <SearchOutlinedIcon />
 
                             </div>
@@ -66,6 +75,8 @@ const Header = ({ setIsPane }) => {
 
 
             </div>
+            {showSearch && <SearchBox showSearch={showSearch} handleClose={handleClose} />}
+
         </div>
     )
 }

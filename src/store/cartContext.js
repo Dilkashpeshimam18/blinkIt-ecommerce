@@ -16,7 +16,10 @@ const CartContext = createContext({
     email: '',
     getUserCart: () => { },
     data: [],
-    homeData: []
+    homeData: [],
+    searchProduct: '',
+    searchHandler: (currLocation) => { },
+    isFilter: false
 
 
 })

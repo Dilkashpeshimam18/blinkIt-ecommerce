@@ -9,12 +9,14 @@ import Carousel from 'react-elastic-carousel'
 const Home = () => {
     const { homeData, setHomeData } = useContext(CartContext)
     useEffect(() => {
+
         let data = Data.filter((data) => {
             return data.category == 'T-Shirt'
         })
         setHomeData(data)
-        console.log(homeData)
-    }, [Data])
+
+
+    }, [])
     return (
         <div className='home'>
             <Carousel itemsToShow={1} enableAutoPlay autoPlaySpeed={1800}>
