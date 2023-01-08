@@ -27,8 +27,8 @@ const Home = () => {
                         </h1>
                         <Link to='/store'><button className='home__btn'>BUY NOW</button></Link>
                     </div>
-                    <div className='home__container2'>
-                        <img style={{ width: '450px', height: '400px' }} src='https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BPSG_ICDyeTF.png?v=1598016592' />
+                    <div className='home__imgContainer2'>
+                        <img className='home__image' style={{ width: '450px', height: '400px' }} src='https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BPSG_ICDyeTF.png?v=1598016592' />
 
                     </div>
 
@@ -41,8 +41,8 @@ const Home = () => {
                         </h1>
                         <Link to='/store'><button className='home__btn'>BUY NOW</button></Link>
                     </div>
-                    <div className='home__container2'>
-                        <img style={{ width: '500px', height: '500px' }} src='https://cdn.shopify.com/s/files/1/0022/5011/3123/products/longsleeveshutdownf.png?v=1663265944' />
+                    <div className='home__imgContainer2'>
+                        <img className='home__image' style={{ width: '500px', height: '500px' }} src='https://cdn.shopify.com/s/files/1/0022/5011/3123/products/longsleeveshutdownf.png?v=1663265944' />
 
                     </div>
 
@@ -55,8 +55,8 @@ const Home = () => {
                         </h1>
                         <Link to='/store'><button className='home__btn'>BUY NOW</button></Link>
                     </div>
-                    <div className='home__container2'>
-                        <img style={{ width: '400px', height: '400px' }} src='https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BPSG_DyeF_faec3f21-5d3a-46e7-8beb-c863ba115477.png?v=1598016743' />
+                    <div className='home__imgContainer2'>
+                        <img className='home__image' style={{ width: '400px', height: '400px' }} src='https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BPSG_DyeF_faec3f21-5d3a-46e7-8beb-c863ba115477.png?v=1598016743' />
 
                     </div>
 
