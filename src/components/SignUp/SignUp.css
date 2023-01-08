@@ -38,3 +38,13 @@
 .login__link:hover {
   text-decoration: underline;
 }
+@media only screen and (max-width: 600px) {
+  .login__input {
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .login__subContainer {
+    margin-left: 40px;
+  }
+}
