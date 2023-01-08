@@ -4,7 +4,7 @@ import { collection, addDoc, getDocs, } from 'firebase/firestore'
 import CartContext from '../../store/cartContext'
 import { useParams } from 'react-router-dom'
 import Avatar from '@mui/material/Avatar';
-
+import './ProductReview.css'
 
 const ProductDetailReview = () => {
     const [allReview, setAllReview] = useState([])

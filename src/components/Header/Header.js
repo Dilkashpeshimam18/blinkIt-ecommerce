@@ -57,7 +57,7 @@ const Header = ({ setIsPane }) => {
                             <div onClick={() => setIsPane(true)} style={{ marginRight: '18px' }} className='header__singleIcon'>
 
                                 <span style={{ marginTop: '5px' }}>    <LocalMallOutlinedIcon className='header__icons' /> </span>
-                                <span style={{ fontSize: '18px', marginLeft: '10px', paddingTop: '8px' }}>{numberOfProduct}</span>
+                                <span style={{ fontSize: '18px', marginLeft: '10px', paddingTop: '10px' }}>{numberOfProduct}</span>
 
                             </div>
                             <div className='header__singleIcon'>

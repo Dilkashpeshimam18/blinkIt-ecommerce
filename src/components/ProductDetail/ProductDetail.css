@@ -171,3 +171,17 @@
   padding-top: 30px;
   margin-right: 20px;
 }
+.product__smallImage {
+  width: 640px;
+  height: 640px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .productDetail__container {
+    flex-direction: column;
+    margin-left: 50px;
+  }
+  .productDetail__desc {
+    width: 400px;
+  }
+}
