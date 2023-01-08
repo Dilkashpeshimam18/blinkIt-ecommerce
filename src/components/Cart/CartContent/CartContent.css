@@ -64,3 +64,21 @@
   padding-top: 18px;
   cursor: pointer;
 }
+@media only screen and (max-width: 600px) {
+  .cart {
+    width: 300px;
+  }
+  .cart__body {
+    width: 150px;
+  }
+  .card__body__name {
+    width: 70px;
+    font-size: 10px;
+  }
+  .card__body__price {
+    font-size: 10px;
+  }
+  .cart__body__total {
+    margin-left: 5px;
+  }
+}

@@ -57,3 +57,18 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+@media only screen and (max-width: 600px) {
+  .cart__header {
+    width: 300px;
+  }
+  .cart__button {
+    width: 150px;
+  }
+  .cart__cancel {
+    width: 150px;
+  }
+  .cart__total {
+    width: 250px;
+  }
+}
