@@ -37,7 +37,7 @@ const Login = () => {
             console.log(isLoggedIn)
         } catch (err) {
             console.log(err)
-            alert(err)
+            alert(err.response.data.error.message)
         }
 
     }
