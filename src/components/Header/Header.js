@@ -31,37 +31,37 @@ const Header = ({ setIsPane }) => {
             <div className='header__Container'>
                 <div className='header__Left'>
                     <div className='header__Icon'>
-                        <h4 style={{ fontWeight: 'bold', fontStyle: 'italic', }}>BLINK IT</h4>
+                        <h4 className='header__title' style={{ fontWeight: 'bold', fontStyle: 'italic', }}>BLINK IT</h4>
                     </div>
 
                 </div>
                 <div className='hedaer__Right'>
                     <div style={{ display: 'flex', alignItems: 'center' }} className='header__Links'>
                         <div className='header__singleLink'>
-                            <NavLink style={{ textDecoration: 'none' }} to='/'><p>HOME</p></NavLink>
+                            <NavLink style={{ textDecoration: 'none' }} to='/'><p className='header__singleLinkText'>HOME</p></NavLink>
                         </div>
                         <div className='header__singleLink'>
-                            <NavLink style={{ textDecoration: 'none' }} to='/store'><p>STORE</p></NavLink>
+                            <NavLink style={{ textDecoration: 'none' }} to='/store'><p className='header__singleLinkText'>STORE</p></NavLink>
                         </div>
                         <div className='header__singleLink'>
-                            <NavLink style={{ textDecoration: 'none' }} to='/about'><p style={{ fontFamily: "Montserrat" }}>ABOUT US</p></NavLink>
+                            <NavLink style={{ textDecoration: 'none' }} to='/about'><p className='header__singleLinkText' style={{ fontFamily: "Montserrat" }}>ABOUT US</p></NavLink>
                         </div>
                         <div className='header__singleLink'>
-                            <NavLink style={{ textDecoration: 'none' }} to='/contact'><p style={{ fontFamily: "Montserrat" }}>CONTACT US</p></NavLink>
+                            <NavLink style={{ textDecoration: 'none' }} to='/contact'><p className='header__singleLinkText' style={{ fontFamily: "Montserrat" }}>CONTACT US</p></NavLink>
                         </div>
                         <div className='header__icons'>
                             <div style={{ cursor: 'pointer' }} onClick={handleClickOpen} className='header__singleIcon'>
-                                <SearchOutlinedIcon />
+                                <SearchOutlinedIcon className='header__icons' />
 
                             </div>
                             <div onClick={() => setIsPane(true)} style={{ marginRight: '18px' }} className='header__singleIcon'>
 
-                                <span style={{ marginTop: '5px' }}>    <LocalMallOutlinedIcon /> </span>
-                                <span style={{ fontSize: '18px', marginLeft: '10px' }}>{numberOfProduct}</span>
+                                <span style={{ marginTop: '5px' }}>    <LocalMallOutlinedIcon className='header__icons' /> </span>
+                                <span style={{ fontSize: '18px', marginLeft: '10px', paddingTop: '8px' }}>{numberOfProduct}</span>
 
                             </div>
                             <div className='header__singleIcon'>
-                                <NavLink to='/login'><PersonOutlinedIcon /></NavLink>
+                                <NavLink to='/login'><PersonOutlinedIcon className='header__icons' /></NavLink>
 
                             </div>
 
