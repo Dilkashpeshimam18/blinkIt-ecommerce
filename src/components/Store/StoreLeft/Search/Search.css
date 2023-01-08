@@ -12,3 +12,8 @@
   padding: 10px;
   font-size: 14px;
 }
+@media only screen and (max-width: 600px) {
+  .searchInput {
+    width: 280px;
+  }
+}
