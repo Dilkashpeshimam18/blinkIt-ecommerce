@@ -3,16 +3,27 @@ import './CartMain.css'
 import { Data } from '../../Data/Data'
 import CartContent from '../CartContent/CartContent'
 import CartContext from '../../../store/cartContext'
-import axios from 'axios'
 import EmptyCart from '../../assets/emptycart.png'
+import Orders from '../../Orders/Orders'
 const Cart = ({ setIsPane }) => {
     const [cartData, setCartData] = useState([])
     const { products, removeAll, total, } = useContext(CartContext)
 
+    const [open, setOpen] = React.useState(false);
 
-    useEffect(() => {
-    }, [])
+    const handleClickOpen = () => {
 
+        setOpen(true);
+    };
+
+    const handleOrders = () => {
+        handleClickOpen()
+    }
+    const handleClose = () => {
+        removeAll()
+        setOpen(false);
+
+    };
     const closeCart = () => {
         setIsPane(false)
 
@@ -50,10 +61,10 @@ const Cart = ({ setIsPane }) => {
                 {products.length != 0 && <>
                     <button onClick={closeCart} className='cart__cancel'>Cancel</button>
 
-                    <button type='submit' className='cart__button'>Order</button>
+                    <button type='submit' onClick={handleOrders} className='cart__button'>Order</button>
                 </>}
 
-
+                <Orders handleClose={handleClose} open={open} />
 
 
 
