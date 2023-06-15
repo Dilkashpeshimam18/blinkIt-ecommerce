@@ -1,0 +1,19 @@
+.searchInput {
+  width: 430px;
+  height: 30px;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid #676767;
+  padding-right: 25px;
+  margin: 0;
+  border-radius: 4px;
+  color: #676767;
+  padding: 10px;
+  font-size: 14px;
+}
+@media only screen and (max-width: 600px) {
+  .searchInput {
+    width: 280px;
+  }
+}

@@ -1,0 +1,8 @@
+.store__Container {
+  display: flex;
+}
+@media only screen and (max-width: 900px) {
+  .store__Container {
+    flex-direction: column;
+  }
+}

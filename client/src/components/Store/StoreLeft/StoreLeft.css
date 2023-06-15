@@ -1,0 +1,11 @@
+.storeLeft {
+  flex: 0.3;
+  width: 100%;
+  padding-left: 100px;
+  padding-top: 60px;
+}
+@media only screen and (max-width: 600px) {
+  .storeLeft {
+    padding-left: 20px;
+  }
+}
