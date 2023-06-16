@@ -26,7 +26,6 @@ exports.payWithRazorpay = async (req, res) => {
 exports.payWithStripe = async (req, res) => {
     try {
         const data=req.body
-        console.log('Stripe body',data)
         const line_items=data.products.map((product)=>{
           return{
             price_data: {
