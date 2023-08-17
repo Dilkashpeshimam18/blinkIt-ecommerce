@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
 import CartContext from '../../store/cartContext'
 import './ProductQuantity.css'
+
 const ProductQuantity = ({ quantity, id }) => {
+
     const { incrementQuantity, decrementQuantity } = useContext(CartContext)
 
     return (

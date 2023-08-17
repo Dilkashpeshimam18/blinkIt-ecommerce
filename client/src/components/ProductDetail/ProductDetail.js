@@ -23,11 +23,7 @@ const ProductDetail = () => {
         if (quantity <= 4) {
             setQuantity((prev) => prev + 1)
 
-
-
         }
-
-
     }
 
 

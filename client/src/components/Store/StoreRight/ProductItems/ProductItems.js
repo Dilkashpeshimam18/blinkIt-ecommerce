@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import './ProductItems.css'
-import { Data } from '../../../Data/Data'
 import Product from '../Product/Product'
-import CartContext from '../../../../store/cartContext'
-import Pagination from '../Pagination/Pagination'
+
 
 const ProductItems = ({ products }) => {
 

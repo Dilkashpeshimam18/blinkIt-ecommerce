@@ -21,9 +21,9 @@ const ProductDetail = React.lazy(() => import('./components/ProductDetail/Produc
 function App() {
   const [isPane, setIsPane] = useState(false)
   const { getUserCart } = useContext(CartContext)
+  const { removeAll } = useContext(CartContext)
 
   useEffect(() => {
-    console.log('app running')
     getUserCart()
   }, [])
 

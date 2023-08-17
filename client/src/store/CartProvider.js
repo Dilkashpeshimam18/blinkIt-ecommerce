@@ -105,9 +105,7 @@ const CartProvider = (props) => {
             }
         }
 
-
-
-    }
+ }
 
     const removeProduct = async (id) => {
         try {
@@ -127,10 +125,7 @@ const CartProvider = (props) => {
     }
     const removeAll = async () => {
         try {
-
             const response = await getDocs(userCartRef)
-
-
             const res = response.docs.forEach((doc) => {
                 deleteDoc(doc.ref)
 
@@ -180,9 +175,7 @@ const CartProvider = (props) => {
         } catch (err) {
             console.log(err)
         }
-
-
-    }
+ }
 
     const decrementQuantity = async (id) => {
         let existingItemIndex = products.findIndex(ele => ele.id === id)
@@ -217,9 +210,6 @@ const CartProvider = (props) => {
         } catch (err) {
             console.log(err)
         }
-
-
-
     }
 
     const login = (token, email) => {
@@ -352,27 +342,26 @@ const CartProvider = (props) => {
         }
     }
 
-    const payWithStripe=async(products)=>{
-         try{
-           const email= localStorage.getItem('userEmail')
-           const data={
-            email:email,
-            products
-           }
-
-            const res=await axios.post('http://localhost:4000/order/paywith-stripe',data)
-
-            console.log('Stripe payment',res)
-            if(res.status==200 && res.data.url){
-                window.location.href = res.data.url;
-
-            }else{
-                alert('Something went wrong!')
+    const payWithStripe = async (products) => {
+        try {
+            const email = localStorage.getItem('userEmail')
+            const data = {
+                email: email,
+                products
             }
 
-         }catch(err){
+            const res = await axios.post('http://localhost:4000/order/paywith-stripe', data)
+
+            if (res.status == 200 && res.data.url) {
+                localStorage.setItem('isStripePayment', true)
+                window.location.href = res.data.url;
+
+            } else {
+                alert('Something went wrong!')
+            }
+        } catch (err) {
             console.log(err)
-         }
+        }
     }
     let cartValue = {
         products: products,
@@ -404,7 +393,7 @@ const CartProvider = (props) => {
         handleOrderOpen: handleOrderOpen,
         open: open,
         setOpen: setOpen,
-        payWithStripe:payWithStripe
+        payWithStripe: payWithStripe
     }
     return (
         <CartContext.Provider value={cartValue}>

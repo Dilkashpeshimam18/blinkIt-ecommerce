@@ -7,15 +7,20 @@ import { Data } from '../Data/Data'
 import Carousel from 'react-elastic-carousel'
 
 const Home = () => {
-    const { homeData, setHomeData } = useContext(CartContext)
+    const { homeData, setHomeData, removeAll } = useContext(CartContext)
+
     useEffect(() => {
         let data = Data.filter((data) => {
             return data.category == 'T-Shirt'
         })
         setHomeData(data)
-
-
+        const isStripe = localStorage.getItem('isStripePayment');
+        if (isStripe && isStripe === 'true') { 
+            removeAll();
+            localStorage.setItem('isStripePayment', false);
+        }
     }, [])
+
     return (
         <div className='home'>
             <Carousel itemsToShow={1} enableAutoPlay autoPlaySpeed={1800}>

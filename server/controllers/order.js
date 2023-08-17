@@ -1,5 +1,6 @@
 const Razorpay = require('razorpay')
 const Stripe=require('stripe')
+const path = require('path');
 require('dotenv').config()
 const stripe=Stripe(process.env.STRIPE_KEY_SECRET)
 
@@ -71,14 +72,25 @@ exports.payWithStripe = async (req, res) => {
             ],
             line_items,
             mode: 'payment',
-            success_url: `${process.env.CLIENT_URL}/checkout-success`,
-            cancel_url: `${process.env.CLIENT_URL}/checkout-failed`,
+            success_url: `${process.env.CLIENT_URL}/order/checkout-success`,
+            cancel_url: `${process.env.CLIENT_URL}/order/checkout-failed`,
           });
-        
+      
           res.json({url:session.url});
     } catch (err) {
         console.log(err)
         res.status(403).json({ success: false, error: err })
 
     }
+}
+
+exports.checkoutSuccess=(req,res)=>{
+  const successFilePath = path.join(__dirname,'..' ,'public', 'success.html');
+  res.sendFile(successFilePath);
+
+}
+
+exports.checkoutFailed=(req,res)=>{
+  const cancelFilePath = path.join(__dirname, 'public', 'failed.html');
+  res.sendFile(cancelFilePath);
 }

@@ -8,8 +8,7 @@ import Orders from '../../Orders/Orders'
 
 const Cart = ({ setIsPane }) => {
     const [cartData, setCartData] = useState([])
-    const { products, removeAll, total, payWithRazorpay, handleOrderClose, handleOrderOpen,open,payWithStripe } = useContext(CartContext)
-
+    const { products, removeAll, total, payWithRazorpay, handleOrderClose, handleOrderOpen, open, payWithStripe } = useContext(CartContext)
 
 
     const handleClickOpen = () => {
@@ -35,7 +34,7 @@ const Cart = ({ setIsPane }) => {
 
     }
 
-    const stripePayment=()=>{
+    const stripePayment = () => {
         payWithStripe(products)
     }
 

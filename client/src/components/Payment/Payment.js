@@ -42,7 +42,6 @@ const Payment = () => {
                     })
 
                     if (response.data.success) {
-                        console.log('Succeful payment')
                         setSuccess(true)
                     }
                 } catch (err) {

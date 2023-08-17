@@ -6,6 +6,7 @@ const Search = () => {
     const [searchProduct, setSearchProduct] = useState('')
     const [isSearch, setIsSearch] = useState(false)
     const { data, setData } = useContext(CartContext)
+    
     useEffect(() => {
         setData(Data)
 

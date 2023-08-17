@@ -9,7 +9,7 @@ import Verify from '.././assets/verified.gif'
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
-const Orders = ({ open, handleClose, razorpayPayment,stripePayment }) => {
+const Orders = ({ open, handleClose, razorpayPayment, stripePayment }) => {
 
     return (
         <div >
@@ -26,11 +26,12 @@ const Orders = ({ open, handleClose, razorpayPayment,stripePayment }) => {
                         Select Payment option:
 
                     </div>
-                    <DialogContentText sx={{ display: 'flex', flexDirection: 'column', justifyContent:'center' }}>
+                    <DialogContentText sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
 
                         <h3 onClick={razorpayPayment} style={{ cursor: 'pointer' }}>PAY WITH RAZORPAY</h3>
 
                         <h3 onClick={stripePayment} style={{ cursor: 'pointer' }}>PAY WITH STRIPE</h3>
+
 
                     </DialogContentText>
 

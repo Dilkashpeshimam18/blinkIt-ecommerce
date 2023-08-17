@@ -9,6 +9,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import CartContext from '../../store/cartContext';
 import { Data } from '../Data/Data';
+
 const SearchBox = ({ showSearch, handleClose }) => {
     const { searchProduct, setSearchProduct, searchHandler, setHomeData } = useContext(CartContext)
     const location = useLocation()
@@ -20,9 +21,7 @@ const SearchBox = ({ showSearch, handleClose }) => {
             return data.category == 'T-Shirt'
         })
         setHomeData(data)
-
-
-    }, [])
+}, [])
     return (
         <Dialog fullWidth='md' open={showSearch} onClose={handleClose}>
             <DialogTitle >Search</DialogTitle>
