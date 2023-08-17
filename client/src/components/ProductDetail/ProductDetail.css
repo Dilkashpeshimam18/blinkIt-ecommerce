@@ -175,6 +175,11 @@
   width: 640px;
   height: 640px;
 }
+.small-image{
+  width: 640px;
+  height: 640px;
+}
+
 
 @media only screen and (max-width: 1000px) {
   .productDetail__container {
@@ -183,5 +188,9 @@
   }
   .productDetail__desc {
     width: 400px;
+  }
+  .small-image{
+    width: 300px;
+    height: 400px;
   }
 }

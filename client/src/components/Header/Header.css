@@ -69,4 +69,7 @@
   .header__icons {
     font-size: 8px;
   }
+  .header__Left{
+    width: 110px;
+  }
 }

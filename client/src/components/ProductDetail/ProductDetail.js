@@ -85,13 +85,14 @@ const ProductDetail = () => {
                             alt: 'Blackpink product',
                             src: img != '' ? img : productDetail.imageUrl,
                             width: 640,
-                            height: 640
+                            height: 640,
 
                         },
                         largeImage: {
                             src: img != '' ? img : productDetail.imageUrl,
                             width: 1200,
-                            height: 1500
+                            height: 1500,
+                            className: 'large-image' 
                         }
                     }} />
                 </div>
