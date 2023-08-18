@@ -32,7 +32,9 @@ const Home = () => {
                         <Link to='/store'><button className='home__btn'>BUY NOW</button></Link>
                     </div>
                     <div className='home__imgContainer2'>
-                        <img className='home__image' style={{ width: '450px', height: '400px' }} src='https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BPSG_ICDyeTF.png?v=1598016592' />
+                   
+                    <img className='home__image' style={{ width: '500px', height: '500px' }} src=' https://cdn.shopify.com/s/files/1/0022/5011/3123/files/Untitled-1.png?v=1684877920' />
+
 
                     </div>
 
@@ -60,7 +62,7 @@ const Home = () => {
                         <Link to='/store'><button className='home__btn'>BUY NOW</button></Link>
                     </div>
                     <div className='home__imgContainer2'>
-                        <img className='home__image' style={{ width: '400px', height: '400px' }} src='https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BPSG_DyeF_faec3f21-5d3a-46e7-8beb-c863ba115477.png?v=1598016743' />
+                    <img className='home__image' style={{ width: '450px', height: '400px' }} src='https://cdn.shopify.com/s/files/1/0022/5011/3123/products/BPSG_ICDyeTF.png?v=1598016592' />
 
                     </div>
 
